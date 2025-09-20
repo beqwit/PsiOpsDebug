@@ -1,0 +1,16 @@
+#pragma once
+
+#include "PsiOps/Character.h"
+#include "PsiOps/Camera.h"
+#include "PsiOps/EventManager.h"
+#include "PsiOps/ExtraContent.h"
+#include "PsiOps/PlayerManager.h"
+#include "PsiOps/Player.h"
+#include "PsiOps/GameConfigure.h"
+#include "PsiOps/GameOptions.h"
+#include "PsiOps/InputManager.h"
+#include "PsiOps/Inventory.h"
+#include "PsiOps/ScreenManager.h"
+#include "PsiOps/GameScriptInterface.h"
+#include "PsiOps/Object.h"
+#include "PsiOps/PCore.h"

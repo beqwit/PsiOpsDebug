@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\PsiOps">
+      <UniqueIdentifier>{561291fc-0fae-4871-989a-31dfeef9a02f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PsiOps">
+      <UniqueIdentifier>{12030079-d3aa-44aa-8969-fe34ad0a1299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hooks">
+      <UniqueIdentifier>{e6b13877-49bb-48e6-9569-594d1abb5cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hooks">
+      <UniqueIdentifier>{b34efa24-a6b9-4c58-9a7f-fb9d1f268c26}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\GameScriptInterface.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\PlayerManager.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\GameConfigure.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\GameOptions.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\InputManager.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\ScreenManager.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\ExtraContent.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\PCore.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Player.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Weapon.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Destination.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Character.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Object.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Camera.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiDebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PsiOps\Inventory.cpp">
+      <Filter>Source Files\PsiOps</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\DetourHooks.cpp">
+      <Filter>Source Files\Hooks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PsiOps\ExtraContent.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\PlayerManager.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\GameConfigure.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\GameOptions.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\InputManager.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\PCore.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\ScreenManager.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\GameScriptInterface.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Player.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Weapon.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Destination.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Character.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Object.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Camera.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PsiOps\Inventory.h">
+      <Filter>Header Files\PsiOps</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks\DetourHooks.h">
+      <Filter>Header Files\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
