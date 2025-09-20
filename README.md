@@ -8,9 +8,9 @@ Custom cheat codes are entered as usual, press V (or your button settings to use
 
 **Here are the added cheat codes and their descriptions:**
 
-- Random level | **8800555**
-- Invisible player | **7348483**
-- Unlock all extra | **5034455**
+- Random level: **8800555**
+- Invisible player: **7348483**
+- Unlock all extra: **5034455**
 
 # Installation
 
