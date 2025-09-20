@@ -28,7 +28,7 @@ public:
     static int ActivateCustomCheatCode(CustomCheatCode cheatCode);
 
     static bool m_bInvisibleCheat;
-    static bool m_bIsDebugRun;
+    static bool m_bIsDebug;
 };
 
 enum CharacterId
