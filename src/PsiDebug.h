@@ -19,6 +19,7 @@ struct CharacterEntry
 class PsiDebug
 {
 public:
+    static void UnlockDebug();
     static void ParseLevelList(CStringVector* levelList);
     static void ParseLevelSegments(CString* levelId, CStringVector* levelSegments);
     static std::vector<std::string> GetCharacterNames();
