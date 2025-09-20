@@ -36,7 +36,7 @@ HRESULT WINAPI D3D9__CreateDevice_Hook(IDirect3D9* This,
     IDirect3DDevice9** ppReturnedDeviceInterface)
 {
     
-    pPresentationParameters->Windowed = PsiDebug::m_bIsDebugRun;
+    pPresentationParameters->Windowed = 1;
 
     HRESULT result = This->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
 
@@ -66,7 +66,7 @@ static void __fastcall SpawnParticles_Hook(CBase* This, void* edx,
     int a14)
 {
     // KDD_FX_duststep01 - walk particle, you can play with this
-    if (PsiDebug::m_bIsDebugRun && strcmp(Str, "KDD_FX_duststep01") == 0)
+    if (PsiDebug::m_bIsDebug && strcmp(Str, "KDD_FX_duststep01") == 0)
     {
         char newParticleName[] = "JCP_FX_bulletHitSparks";
         Str = newParticleName;
@@ -99,14 +99,15 @@ static void __fastcall CPlayer__Update_Hook(CPlayer* This, void* edx, int a2)
         if (PsiDebug::m_bInvisibleCheat)
         {
             if (!This->m_bInvisible)
-            {
-                // Set invisible for enemies
-                CGameScriptInterface::SetInvisible(This, 1);
+            {   
+                // Set player ghost effect
                 CDrawState* drawState = characterPlayer->GetRootAtom()->GetDrawingObject()->GetDrawState();
 
-                // Set player ghost effect
                 drawState->SetAlphaMode(2);
                 drawState->SetLightingMode(1);
+
+                // Set invisible for enemies
+                CGameScriptInterface::SetInvisible(This, 1);
             }
         }
     }
@@ -117,8 +118,11 @@ static void __fastcall CPlayer__Update_Hook(CPlayer* This, void* edx, int a2)
 void DetourHooks::InitHooks()
 {
     // Replace with NOP for CreateDevice cause im not using trampoline
-    Nop(0x778C2B, 3);
-    InjectHook(0x778C28, D3D9__CreateDevice_Hook, PATCH_CALL);
+    if (PsiDebug::m_bIsDebug)
+    {
+        Nop(0x778C2B, 3);
+        InjectHook(0x778C28, D3D9__CreateDevice_Hook, PATCH_CALL);
+    }
 
     DetourTransactionBegin();
     DetourUpdateThread(GetCurrentThread());
