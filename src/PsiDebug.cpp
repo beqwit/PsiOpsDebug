@@ -101,6 +101,16 @@ void PsiDebug::GotoRandomLevel()
     delete levelData;
 }
 
+void PsiDebug::UnlockDebug()
+{
+    // Patch to unlock debug menu
+    // Always true for debug IsButtonWithTypeEnabled
+    if (MemEquals(0x564464, { 0x74 }))
+    {
+         Patch(0x564464, { 0x75 });
+    }
+}
+
 int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
 {
     switch (cheatCode)
