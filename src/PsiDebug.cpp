@@ -105,16 +105,6 @@ int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
 {
     switch (cheatCode)
     {
-        case ENABLE_DEBUG:
-        {
-            // Always true for debug IsButtonWithTypeEnabled
-            if (MemEquals(0x564464, { 0x74 }))
-            {
-                Patch(0x564464, { 0x75 });
-            }
-
-            break;
-        }
         case RANDOM_LEVEL:
         {
             CScreenManager* screen = CScreenManager::Get();
