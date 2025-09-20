@@ -1,6 +1,6 @@
 #include "PsiDebug.h"
 
-bool PsiDebug::m_bIsDebugRun;
+bool PsiDebug::m_bIsDebug;
 bool PsiDebug::m_bInvisibleCheat;
 
 void PsiDebug::ParseLevelList(CStringVector* levelList)
@@ -11,6 +11,16 @@ void PsiDebug::ParseLevelList(CStringVector* levelList)
 void PsiDebug::ParseLevelSegments(CString* levelId, CStringVector* levelSegments)
 {
     STDCall<0x4F64E0, CString*, CStringVector*>(levelId, levelSegments);
+}
+
+void PsiDebug::UnlockDebug()
+{
+    if (MemEquals(0x564464, { 0x74 }))
+    {
+        // Patch to unlock debug menu
+        // Always true for debug in IsButtonWithTypeEnabled
+        Patch(0x564464, { 0x75 });
+    }
 }
 
 std::vector<std::string> PsiDebug::GetCharacterNames()
@@ -62,7 +72,6 @@ void PsiDebug::SetRandomCharacter()
     CGameScriptInterface::SetMainCharacter(gameOptions, randomCharacter.c_str(), 0, 0, 0, 0);
 }
 
-// Idk why, but I have to use one string game vector in this function, otherwise undefined behavior
 void PsiDebug::GotoRandomLevel()
 {
     printf("[FUNC] GotoRandomLevel()\n");
@@ -74,7 +83,7 @@ void PsiDebug::GotoRandomLevel()
     int levelCount = levelData->Size();
     int level = rand() % levelCount;
 
-    // If this a menu level, randomize next
+    // If this a menu level, then randomize next
     if (strcmp(levelData->GetElement(level)->GetData()->c_str(), "97") == 0)
     {
         level -= rand() % (levelCount - 2);
@@ -85,7 +94,7 @@ void PsiDebug::GotoRandomLevel()
     const char* levelName = levelData->GetElement(level)->GetData()->c_str();
     const char* segmentName;
 
-    // If this a non-active level with prefix 'V', randomize next
+    // If this a non-active level with prefix 'V', then randomize next
     do
     {
         int segment = rand() % (levelData->Size() - levelCount);
@@ -99,16 +108,6 @@ void PsiDebug::GotoRandomLevel()
 
     // Destroy string game vector
     delete levelData;
-}
-
-void PsiDebug::UnlockDebug()
-{
-    // Patch to unlock debug menu
-    // Always true for debug IsButtonWithTypeEnabled
-    if (MemEquals(0x564464, { 0x74 }))
-    {
-         Patch(0x564464, { 0x75 });
-    }
 }
 
 int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
@@ -126,6 +125,11 @@ int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
             GotoRandomLevel();
             break;
         }
+        case INVISIBLE_MODE:
+        {
+            m_bInvisibleCheat = true;
+            break;
+        }
         case UNLOCK_ALL_EXTRA:
         {
             // Interface game option always return true
@@ -135,11 +139,6 @@ int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
         default:
         {
             return 0;
-        }
-        case INVISIBLE_MODE:
-        {
-            m_bInvisibleCheat = true;
-            break;
         }
 
     }
