@@ -31,8 +31,9 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         PsiDebug::m_bIsDebugRun = true;
         AllocateConsole();
 #endif    
-        PsiDebug::UnlockDebug();
         DetourHooks::InitHooks();
+        PsiDebug::UnlockDebug();
+        break;
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
