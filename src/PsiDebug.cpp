@@ -116,11 +116,6 @@ int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
             GotoRandomLevel();
             break;
         }
-        case INVISIBLE_MODE:
-        {
-            m_bInvisibleCheat = true;
-            break;
-        }
         case UNLOCK_ALL_EXTRA:
         {
             // Interface game option always return true
@@ -130,6 +125,11 @@ int PsiDebug::ActivateCustomCheatCode(CustomCheatCode cheatCode)
         default:
         {
             return 0;
+        }
+        case INVISIBLE_MODE:
+        {
+            m_bInvisibleCheat = true;
+            break;
         }
 
     }
