@@ -14,4 +14,4 @@ Custom cheat codes are entered as usual, press V (or your button settings to use
 
 # Installation
 
-Unzip the files from [Releases](https://github.com/beqwit/PsiOpsDebug/releases) in game files directory.
+Unzip files from [Releases](https://github.com/beqwit/PsiOpsDebug/releases) in game files directory.
