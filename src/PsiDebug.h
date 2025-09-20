@@ -4,10 +4,9 @@
 
 enum CustomCheatCode
 {
-    ENABLE_DEBUG = 5034455,
     RANDOM_LEVEL = 8800555,
-    INVISIBLE_MODE = 929292,
-    UNLOCK_ALL_EXTRA = 735834
+    INVISIBLE_MODE = 7348483,
+    UNLOCK_ALL_EXTRA = 5034455
 };
 
 struct CharacterEntry
